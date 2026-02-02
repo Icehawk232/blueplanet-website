@@ -26,43 +26,43 @@
     /* small helper for pricing list */
     .price-list{list-style:none;padding:0;margin:8px 0 0 0;text-align:left}
     .price-list li{padding:6px 0;border-top:1px dashed #eee}
-    /* ===== Logo sizing (responsive) ===== */
+/* ===== Logo sizing & containment (fixed) ===== */
 header img.logo {
-  height: 100px;
+  height: 100px;     /* visual height */
+  max-width: 360px;  /* prevents the image from growing too wide */
   width: auto;
   display: block;
+  margin: 0 auto;    /* center horizontally */
 }
 
-@media (min-width: 900px) {
-  header img.logo {
-    height: 120px;
-  }
-}
-
-@media (max-width: 420px) {
-  header img.logo {
-    height: 88px;
-  }
-}
-
-/* ===== Header layout ===== */
+/* Make sure header stays a small top bar but not force layout issues */
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 18px;
+  display: block;           /* keep header simple */
+  padding: 8px 18px;
+  background: transparent;
 }
 
-/* ===== Hero spacing ===== */
-.hero {
-  padding: 32px 20px;
+/* Hero area — keep the logo visually inside the hero */
+.hero{
+  background:#374151;
+  color:#fff;
+  padding:36px 20px;
+  text-align:center;
+  box-sizing:border-box;
 }
 
-@media (min-width: 900px) {
-  .hero {
-    padding: 48px 20px;
-  }
+/* slightly larger logo on wide screens */
+@media (min-width:900px){
+  header img.logo{ height:120px; max-width:420px; }
+  .hero{ padding:48px 20px; }
 }
+
+/* slightly smaller on very small screens */
+@media (max-width:420px){
+  header img.logo{ height:86px; max-width:320px; }
+  .hero{ padding:28px 12px; }
+}
+
 
   </style>
 </head>
