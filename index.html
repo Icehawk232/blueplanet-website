@@ -26,30 +26,26 @@
     /* small helper for pricing list */
     .price-list{list-style:none;padding:0;margin:8px 0 0 0;text-align:left}
     .price-list li{padding:6px 0;border-top:1px dashed #eee}
-    /* Mobile-friendly logo / hero adjustments */
-@media (max-width: 600px) {
-  /* container & hero */
-  .hero {
-    padding: 28px 12px;
-    text-align: center;
-  }
-
-  /* keep the header simple on small screens */
-  header { padding: 8px 12px; }
-
-  /* scale logo on phones so it fits and centers */
-  header img.logo{
-    display: block;
-    margin: 0 auto;     /* center */
-    height: 92px;       /* visual height for most phones */
-    max-width: 260px;   /* prevents it overflowing horizontally */
-    width: auto;
-  }
-
-  /* reduce hero headline size slightly for compact layout */
-  .hero h1 { font-size: 28px; line-height:1.05; }
-  .hero p  { font-size: 15px; }
+/* Logo default (desktop-safe) */
+.logo {
+  max-width: 100%;
+  height: auto;
 }
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 85vw;   /* NEVER wider than screen */
+    height: auto;
+  }
+
+  body {
+    overflow-x: hidden; /* kills sideways scroll */
+  }
+}
+
 
   </style>
 </head>
